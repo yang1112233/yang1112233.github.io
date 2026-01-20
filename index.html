@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>官网升级维护中</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+    "Microsoft YaHei", Arial, sans-serif;
+}
+
+/* 动态背景 */
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    120deg,
+    #e6eef3,
+    #f4f7f9,
+    #e3edf3,
+    #f1f6f8
+  );
+  background-size: 420% 420%;
+  animation: bgMove 14s ease-in-out infinite;
+  overflow-x: hidden;
+}
+
+@keyframes bgMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Logo */
+.logo {
+  position: fixed;
+  top: 28px;
+  left: 36px;
+  z-index: 10;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.logo.hide {
+  opacity: 0;
+  transform: translateY(-12px);
+  pointer-events: none;
+}
+.logo img {
+  height: 40px;
+}
+
+/* 标题 */
+.hero-title {
+  margin-top: 140px;
+  text-align: center;
+  font-size: 64px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+/* 容器 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 60px 40px;
+}
+
+/* 主体 */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* 正文段落（基准行距） */
+.text p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #334155;
+  margin-bottom: 16px;
+}
+
+/* 商务对接 */
+.text .contact {
+  margin-top: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* ✅ 你要的「一整段」 */
+.footer {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.9; /* ← 和正文完全一致 */
+}
+
+/* 右侧图片 */
+.image {
+  display: flex;
+  justify-content: center;
+}
+.image img {
+  width: 100%;
+  max-width: 580px;
+}
+
+/* 二维码 */
+.qr-section {
+  margin: 60px auto 40px;
+  text-align: center;
+}
+.qr-section img {
+  width: 140px;
+}
+
+/* 移动端 */
+@media (max-width: 900px) {
+  .hero-title {
+    font-size: 40px;
+    white-space: normal;
+    margin: 120px 24px 0;
+  }
+
+  .container {
+    padding: 60px 24px 30px;
+    text-align: center;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="logo" id="logo">
+  <img src="https://cdn.shopify.com/s/files/1/0932/5222/3279/files/532aa45224fcf715ffe97ba538b05b67.png?v=1768460403">
+</div>
+
+<div class="hero-title">
+  浙江元启智造科技有限公司官网升级维护中
+</div>
+
+<div class="container">
+  <div class="main">
+
+    <div class="text">
+      <p>尊敬的客户与合作伙伴：</p>
+
+      <p>
+        为提升官网服务质量，优化产品信息与解决方案的展示体验，
+        我司官网现进入升级维护阶段。
+      </p>
+
+      <p>
+        升级期间，官网暂无法正常访问。如需咨询机器人关节模组、电机、
+        减速器、驱动器、传感器等产品的技术参数、定制方案及合作事宜，
+        请通过以下方式联系我们，我们将第一时间为您响应。
+      </p>
+
+      <p class="contact">
+        商务对接 & 技术咨询：<br>
+        何先生 17744539472 ｜ hxl@yokeyrobo.com
+      </p>
+
+      <!-- ✅ 一整段 + 行距一致 -->
+      <div class="footer">
+        感谢您的理解与支持，升级完成后我们将第一时间通知！<br>
+        浙江元启智造科技有限公司<br>
+        2026 年 1 月 15 日
+      </div>
+    </div>
+
+    <div class="image">
+      <img src="https://cdn.shopify.com/s/files/1/0932/5222/3279/files/ChatGPT_Image_2026_1_12_16_03_06.png?v=1768274199">
+    </div>
+
+  </div>
+
+  <div class="qr-section">
+    <img src="https://cdn.shopify.com/s/files/1/0932/5222/3279/files/weixin.png?v=1768460739">
+  </div>
+</div>
+
+<script>
+let lastScrollTop = 0;
+const logo = document.getElementById('logo');
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if (scrollTop > lastScrollTop && scrollTop > 80) {
+    logo.classList.add('hide');
+  } else {
+    logo.classList.remove('hide');
+  }
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+});
+</script>
+
+</body>
+</html>
