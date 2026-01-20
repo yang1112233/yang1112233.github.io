@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<meta charset="utf-8">
+
+  <script>
+    (function () {
+      var host = location.hostname.toLowerCase();
+
+      // 只有 .com 域名才跳英文
+      if (host === 'yokeyrobo.com' || host === 'www.yokeyrobo.com') {
+        location.replace('/en.html');
+      }
+    })();
+  </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>官网升级维护中</title>
@@ -208,3 +220,4 @@ window.addEventListener('scroll', () => {
 
 </body>
 </html>
+
