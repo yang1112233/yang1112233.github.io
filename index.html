@@ -14,16 +14,9 @@
     "Microsoft YaHei", Arial, sans-serif;
 }
 
-/* 动态背景 */
 body {
   min-height: 100vh;
-  background: linear-gradient(
-    120deg,
-    #e6eef3,
-    #f4f7f9,
-    #e3edf3,
-    #f1f6f8
-  );
+  background: linear-gradient(120deg, #e6eef3, #f4f7f9, #e3edf3, #f1f6f8);
   background-size: 420% 420%;
   animation: bgMove 14s ease-in-out infinite;
   overflow-x: hidden;
@@ -35,7 +28,6 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Logo */
 .logo {
   position: fixed;
   top: 28px;
@@ -52,7 +44,6 @@ body {
   height: 40px;
 }
 
-/* 标题 */
 .hero-title {
   margin-top: 140px;
   text-align: center;
@@ -63,126 +54,137 @@ body {
   white-space: nowrap;
 }
 
-/* 容器 */
 .container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 80px 60px 40px;
+  padding: 56px 28px 40px;
 }
 
-/* 主体 */
-.main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+.section {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(148,163,184,0.22);
+  border-radius: 18px;
+  padding: 28px 30px;
+  box-shadow: 0 10px 30px rgba(15,23,42,0.06);
 }
 
-/* 正文段落（基准行距） */
-.text p {
+.section + .section {
+  margin-top: 22px;
+}
+
+.section h2 {
+  font-size: 20px;
+  color: #0f172a;
+  margin-bottom: 14px;
+}
+
+.section p {
   font-size: 16px;
-  line-height: 1.9;
+  line-height: 2;
   color: #334155;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
-/* 商务对接 */
-.text .contact {
-  margin-top: 16px;
+.section p:last-child {
+  margin-bottom: 0;
+}
+
+.contact {
   font-weight: 600;
   color: #0f172a;
 }
 
-/* ✅ 你要的「一整段」 */
 .footer {
-  margin-top: 16px;
   font-size: 14px;
   color: #475569;
-  line-height: 1.9; /* ← 和正文完全一致 */
+  line-height: 1.9;
 }
 
-/* 右侧图片 */
-.image {
+.top-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.image-card {
   display: flex;
   justify-content: center;
-}
-.image img {
-  width: 100%;
-  max-width: 580px;
+  align-items: center;
 }
 
-/* 二维码 */
+.image-card img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 16px;
+}
+
 .qr-section {
-  margin: 60px auto 40px;
+  margin: 22px auto 0;
   text-align: center;
 }
+
 .qr-section img {
-  width: 140px;
+  width: 160px;
+  max-width: 100%;
 }
 
-/* 移动端 */
 @media (max-width: 900px) {
   .hero-title {
-    font-size: 40px;
+    font-size: 34px;
     white-space: normal;
-    margin: 120px 24px 0;
+    padding: 0 20px;
   }
 
   .container {
-    padding: 60px 24px 30px;
-    text-align: center;
+    padding: 28px 16px 20px;
   }
 
-  .main {
+  .top-grid {
     grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 22px 18px;
+  }
+
+  .image-card img {
+    max-width: 100%;
   }
 }
 </style>
 </head>
 
 <body>
-
 <div class="logo" id="logo">
   <img src="https://cdn.shopify.com/s/files/1/0932/5222/3279/files/532aa45224fcf715ffe97ba538b05b67.png?v=1768460403">
 </div>
 
-<div class="hero-title">
-  元启俱身 | 官网升级维护公告
-</div>
+<div class="hero-title">元启俱身 | 官网升级维护公告</div>
 
 <div class="container">
-  <div class="main">
-
-    <div class="text">
+  <div class="top-grid">
+    <div class="section">
+      <h2>公告说明</h2>
       <p>尊敬的客户与合作伙伴：</p>
-
-      <p>
-        为提升官网服务质量，优化产品信息与解决方案的展示体验，
-        我司官网现进入升级维护阶段。
-      </p>
-
-      <p>
-        升级期间，官网暂无法正常访问。如需咨询机器人关节模组、电机、
-        减速器、驱动器、传感器等产品的技术参数、定制方案及合作事宜，
-        请通过以下方式联系我们，我们将第一时间为您响应。
-      </p>
-
-      <p class="contact">
-        商务对接 & 技术咨询：<br>
-        何先生 17744539472 ｜ hxl@yokeyrobo.com
-      </p>
-
-      <!-- ✅ 一整段 + 行距一致 -->
-      <div class="footer">
-        感谢您的理解与支持，升级完成后我们将第一时间通知！<br>
-        浙江元启智造科技有限公司<br>
-      </div>
+      <p>为提升官网服务质量，优化产品信息与解决方案的展示体验，我司官网现进入升级维护阶段。</p>
+      <p>升级期间，官网暂无法正常访问。如需咨询机器人关节模组、电机、减速器、驱动器、传感器等产品的技术参数、定制方案及合作事宜，请通过以下方式联系我们，我们将第一时间为您响应。</p>
+      <p class="contact">商务对接 &amp; 技术咨询：<br>何先生 17744539472 ｜ hxl@yokeyrobo.com</p>
+      <div class="footer">感谢您的理解与支持，升级完成后我们将第一时间通知！<br>浙江元启智造科技有限公司</div>
     </div>
 
-    <div class="image">
+    <div class="image-card">
       <img src="https://cdn.shopify.com/s/files/1/0932/5222/3279/files/ChatGPT_Image_2026_1_12_16_03_06.png?v=1768274199">
     </div>
+  </div>
 
+  <div class="section" style="margin-top:22px;">
+    <h2>公司介绍</h2>
+    <p>浙江元启智造科技有限公司成立于 2025 年，是一家专注于具身智能动力系统核心技术研发与高端智能制造的科技型企业。公司以浙江乐清为制造总部、北京为研发基地，构建双核战略布局。</p>
+    <p>乐清制造总部与深耕减速电机领域三十余年的台邦电机工业集团深度绑定、协同发展，依托台邦集团在精密传动与减速电机领域成熟的制造体系、产业积淀与供应链优势，为元启智造提供坚实的规模化生产与品质保障。</p>
+    <p>公司以成熟的制造体系为支撑，汇聚业内知名院校与具身智能领域专家，持续推动技术迭代，打造研产销全链条生态系统。现已实现全栈自研并规模化量产行星减速器、谐波减速器、摆线减速器、伺服电机、无框电机、控制驱动器、一体化关节模组等核心部件。产品广泛应用于人形机器人、四足机器人、协作机械臂、电动夹爪、商业航天、低空经济、海洋工程等领域。</p>
+    <p>立足核心部件自研与规模化制造优势，公司进一步布局四足机器人、人形机器人整机的研发与产业化落地。凭借硬核技术壁垒与全产业链优势，致力成为具身智能核心部件与整机领域的行业标杆。</p>
   </div>
 
   <div class="qr-section">
@@ -204,12 +206,5 @@ window.addEventListener('scroll', () => {
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 </script>
-
 </body>
 </html>
-
-
-
-
-
-
